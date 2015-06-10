@@ -52,14 +52,14 @@ gp_tmpl_header();
 			<dt><?php _e( 'Member Since' ); ?></dt>
 			<dd><?php echo date( 'M j, Y', strtotime( $user->user_registered ) ); ?></dd>
 			<dt><?php _e( 'Role' ); ?></dt>
-			<dd><?php 
-			if ( $user->admin() ) { 
+			<dd><?php
+			if ( $user->admin() ) {
 				printf( __( '%s is an admin on this site.' ), $user->display_name );
 			} else {
 				vprintf( _n( '%s is a polyglot who contributes to %s',
 									'%s is a polyglot who knows %s but also knows %s.', count( $locales ) ),
-									array_merge( array( $user->display_name ), array_keys( $locales ) ) ); 
-			} 
+									array_merge( array( $user->display_name ), array_keys( $locales ) ) );
+			}
 			?></dd>
 			<?php
 			$website = yst_get_user_website( $user->id );
@@ -79,15 +79,6 @@ gp_tmpl_header();
 			?>
 		</dl>
 	</div>
-</div>
-
-<div class="column">
-	
-	<?php if ( count($permissions) >= 1 ) { ?>
-	<img class="aligncenter" alt="Yoast Translate Validator" src="https://translate.yoast.com/plugins/templates/images/Validator_Badge_Yoast_Translate.svg" width="200" />
-	<?php } else { ?>
-	<img class="aligncenter" alt="Yoast Translate Team Member" src="https://translate.yoast.com/plugins/templates/images/Team_Badge_Yoast_Translate.svg" width="200" />
-	<?php } ?>
 </div>
 
 <div class="clear"></div>
@@ -112,7 +103,7 @@ gp_tmpl_header();
 	</div>
 	<div class="validates-projects">
 		<h3><?php _e( 'Validator to' ); ?></h3>
-		
+
 		<?php if ( count($permissions) >= 1 ): ?>
 			<ul>
 			<?php foreach ( $permissions as $permission ): ?>

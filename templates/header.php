@@ -1,95 +1,34 @@
 <?php
 wp_enqueue_style( 'base' );
 wp_enqueue_style( 'open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans:600,400', false, 'all' );
+
+$url = gp_url_public_root();
+wp_enqueue_style( 'font', $url . '/plugins/tec-theme/templates/css/font.css' );
+wp_enqueue_style( 'main', $url . '/plugins/tec-theme/templates/css/main.css' );
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name=viewport content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<title><?php echo gp_title(); ?></title>
 		<?php gp_head(); ?>
 
-		<style>
-		body, html,
-		.gp-content,
-		.gp-content textarea,
-		.gp-content input {
-			font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
-		}
-		h1 a.logo {
-			width: 328px;
-			height: 60px;
-		}
-		h1 span.breadcrumb {
-			margin-top: 24px;
-		}
-		.alignleft, .column {
-			float: left !important;
-		}
-		.alignright {
-			float: right !important;
-		}
-		.aligncenter {
-			display: block;
-			margin: 0 auto;
-		}
-		.clear {
-			clear: both;
-		}
-		.column {
-			width: 47%;
-			margin-right: 3%;
-		}
-		.user-card dl.user-info dd, .user-card dl.user-info dt {
-			float: left;
-			margin: 0 0 5px 0;
-		}
-		.user-card dl.user-info dt {
-			margin: 0;
-			font-size: 14px;
-			clear: both;
-			width: 125px;
-		}
-		.user-card dl.user-info dd {
-			width: 275px;
-		}
-		.user-card .user-avatar {
-			width: 120px;
-			height: 120px;
-		}
-		#projects_box {
-			float: right; 
-			width: 320px; 
-			margin: 10px 5%; 
-			padding: 10px 20px; 
-			background-color: #f9f9f9;
-		}
-		textarea.profile {
-			width: 500px;
-			height: 80px;
-		}
-		.translation-sets .even .stats.complete50, .translation-sets .even .stats.complete60, .translation-sets .even .stats.complete70, .translation-sets .even .stats.complete80 {
-			background-color: rgb(144, 238, 144);
-			color: white;
-		}
-		.translation-sets .odd .stats.complete50, .translation-sets .odd .stats.complete60, .translation-sets .odd .stats.complete70, .translation-sets .odd .stats.complete80 {
-			background-color: rgb(144, 200, 144);
-			color: white;
-		}
-		
-		</style>
-
 	</head>
 	<body <?php body_class(); ?>>
-	<script type="text/javascript">document.body.className = document.body.className.replace('no-js','js');</script>
-		<div class="gp-content">
-	    <div id="gp-js-message"></div>
-		<h1>
-			<a class="logo" href="<?php echo gp_url( '/' ); ?>" rel="home">
-				<?php echo file_get_contents( '/var/www/translate.yoast.com/plugins/templates/images/Yoast_Translate_horizontal.embed.svg' ); ?>
-			</a>
+		<header>
+				<div class="logo" itemscope="" itemprop="author headline" itemtype="https://schema.org/Organization">
+				<h1 class="logo-wrap">
+					<a href="http://translations.theeventscalendar.com" class="logo-anchor" rel="home" itemprop="url">
+						<img src="https://theeventscalendar.com/content/themes/tribe-ecp/img/logos/logo@2x.png" class="logo-image" itemprop="logo" alt="The Events Calendar by Modern Tribe Logo">
+						<span class="logo-anchor-text">
+							<em itemprop="brand">The Events Calendar</em>
+							<div class="logo-creds"><strong>Translations</strong> by <h6 itemprop="name">Modern Tribe</h6></div>
+						</span>
+					</a>
+				</h1>
+			</div>
 			<?php echo gp_breadcrumb(); ?>
 			<span id="hello">
 			<?php
@@ -106,7 +45,11 @@ wp_enqueue_style( 'open-sans', 'https://fonts.googleapis.com/css?family=Open+San
 			<?php do_action( 'after_hello' ); ?>
 			</span>
 			<div class="clearfix"></div>
-		</h1>
+		</header>
+		<script type="text/javascript">document.body.className = document.body.className.replace('no-js','js');</script>
+		<div class="gp-content">
+	    <div id="gp-js-message"></div>
+
 		<div class="clear after-h1"></div>
 		<?php if (gp_notice('error')): ?>
 			<div class="error">

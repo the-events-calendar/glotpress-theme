@@ -45,25 +45,6 @@ if ( ! is_array($default_sort) ) {
 				), gp_array_get( $default_sort, 'how', 'desc' ) );
 			?></td>
 		</tr>
-		<tr>
-			<?php
-			$permissions = GP::$user->current()->get_permissions();
-					if ( count($permissions) >= 1 ) {
-						$badge = '<a title="I validate translations at translate.yoast.com" href="https://translate.yoast.com"><img alt="Yoast Translate Validator" src="https://translate.yoast.com/plugins/templates/images/Validator_Badge_Yoast_Translate.svg" width="200" /></a>';
-					} else {
-						$badge = '<a title="I translate at translate.yoast.com" href="https://translate.yoast.com"><img alt="Yoast Translate Team Member" src="https://translate.yoast.com/plugins/templates/images/Team_Badge_Yoast_Translate.svg" width="200" /></a>';
-					}
-			?>
-			<th>Badge:</th>
-			<td>
-				You can use this badge to promote your activity in this translate project!<br>
-				<br>
-				<textarea class="profile"><?php echo htmlentities( $badge ); ?></textarea><br>
-				<br>
-				It'll render like this:<br><br>
-				<?php echo $badge; ?>
-			</td>
-		</tr>
 	</table>
 	<br>
 	<input type="submit" name="submit" value="<?php esc_attr_e("Change Settings"); ?>">

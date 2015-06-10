@@ -1,4 +1,4 @@
-*# GlotPress theme
+## GlotPress theme
 
 The GlotPress "theme-plugin" in use on translations.theeventscalendar.com
 

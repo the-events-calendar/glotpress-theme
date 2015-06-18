@@ -40,7 +40,7 @@ wp_enqueue_style( 'main', $url . '/plugins/tec-theme/templates/css/main.css' );
 				<a href="<?php echo gp_url('/logout')?>"><?php _e('Log out'); ?></a>
 			<?php elseif( ! GP_INSTALLING ): ?>
 				<strong><a href="<?php echo gp_url_login(); ?>"><?php _e('Log in'); ?></a></strong>
-				| <strong><a href="/register/"><?php _e('Register'); ?></a></strong>
+				| <strong><a href="/wordpress/wp-login.php?action=register"><?php _e('Register'); ?></a></strong>
 			<?php endif; ?>
 			<?php do_action( 'after_hello' ); ?>
 			</span>

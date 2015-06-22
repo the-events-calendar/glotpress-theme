@@ -9,6 +9,9 @@ class TEC_Child_Theme extends GP_Plugin {
 
         $this->add_action( 'plugins_loaded' );
         $this->add_filter( 'tmpl_load_locations', array( 'args' => 4 ) );
+
+        $url = gp_url_public_root();
+        wp_enqueue_script( 'tec', $url . '/plugins/tec-theme/templates/js/tec.js', array( 'jquery' ) );
     }
 
     public function plugins_loaded() {

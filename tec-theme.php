@@ -12,6 +12,10 @@ class TEC_Child_Theme extends GP_Plugin {
 
         $url = gp_url_public_root();
         wp_enqueue_script( 'tec', $url . '/plugins/tec-theme/templates/js/tec.js', array( 'jquery' ) );
+
+        if ( is_object ) {
+            GP::$translation->per_page = 30;
+        }
     }
 
     public function plugins_loaded() {

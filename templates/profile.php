@@ -5,7 +5,7 @@ gp_tmpl_header();
 
 $per_page = GP::$user->current()->get_meta('per_page');
 if ( 0 == $per_page )
-	$per_page = 15;
+	$per_page = 30;
 
 $default_sort = GP::$user->current()->get_meta('default_sort');
 if ( ! is_array($default_sort) ) {

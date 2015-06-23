@@ -9,7 +9,7 @@ jQuery( document ).ready( function( $ ) {
 
 		$heading = $( '.gp-content>h2' );
 
-		$export_links = $('<span><em>export:</em> <a href="' + export_url + 'mo">po</a> | <a href="' + export_url + 'po">po</a></span>' );
+		$export_links = $('<span><em>export:</em> <a href="' + export_url + 'mo">mo</a> | <a href="' + export_url + 'po">po</a></span>' );
 
 		$export_links.addClass('action').css( {
 			fontWeight: 'normal',

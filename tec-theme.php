@@ -9,6 +9,7 @@ class TEC_Child_Theme extends GP_Plugin {
 
         $this->add_action( 'plugins_loaded' );
         $this->add_filter( 'tmpl_load_locations', array( 'args' => 4 ) );
+        $this->add_filter( 'export_locale', array( 'args' => 2 ) );
 
         $url = gp_url_public_root();
         wp_enqueue_script( 'tec', $url . '/plugins/tec-theme/templates/js/tec.js', array( 'jquery' ) );
@@ -26,6 +27,10 @@ class TEC_Child_Theme extends GP_Plugin {
         array_unshift( $locations, $this->child_path );
 
         return $locations;
+    }
+
+    public function export_locale( $slug, $locale ) {
+        return $locale->wp_locale;
     }
 }
 

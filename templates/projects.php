@@ -25,7 +25,7 @@ $retired_plugins = array(
 	<p>Note: to provide translations for these plugins you will need to <a href="https://make.wordpress.org/polyglots/handbook/tools/glotpress-translate-wordpress-org/">become a translation editor on WordPress.org</a></p>
 	<ul>
 		<?php
-		foreach ( $free_plugins as $plugins_slug => $plugin_name ) {
+		foreach ( $free_plugins as $plugin_slug => $plugin_name ) {
 			?>
 			<li><a href="https://translate.wordpress.org/projects/wp-plugins/<?php echo esc_attr( $plugin_slug ); ?>/stable"><?php echo esc_html( $plugin_name ); ?></a></li>
 			<?php
